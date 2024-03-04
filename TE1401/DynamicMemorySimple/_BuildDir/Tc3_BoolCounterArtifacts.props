@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<Project ToolsVersion = "4.0" xmlns = "http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup> <!--MATLAB_count_and_invert_booleans-->
+		<MATLAB_count_and_invert_booleans_MATLAB_VERSION>23.2</MATLAB_count_and_invert_booleans_MATLAB_VERSION>
+		<MATLAB_count_and_invert_booleans_MATLAB_ROOT>$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\MathWorks\MATLAB\$(MATLAB_count_and_invert_booleans_MATLAB_VERSION)', 'MATLABROOT', 'C:\Program Files\MATLAB\R2023b', RegistryView.Registry64))</MATLAB_count_and_invert_booleans_MATLAB_ROOT>
+		<MATLAB_count_and_invert_booleans_BUILD_DIR>$(ProjectDir)\count_and_invert_booleans</MATLAB_count_and_invert_booleans_BUILD_DIR>
+		<MATLAB_count_and_invert_booleans_START_DIR>$(ProjectDir)\count_and_invert_booleans</MATLAB_count_and_invert_booleans_START_DIR>
+		<MATLAB_count_and_invert_booleans_SRC2>C:\Users\MattK\Documents\MATLAB\TE14xxSamples\DynamicMemorySimple\_BuildDir\count_and_invert_booleans\..\..</MATLAB_count_and_invert_booleans_SRC2>
+		<MATLAB_count_and_invert_booleans_INCDIR1>$(MATLAB_count_and_invert_booleans_START_DIR)</MATLAB_count_and_invert_booleans_INCDIR1>
+		<MATLAB_count_and_invert_booleans_INCDIR2>$(MATLAB_count_and_invert_booleans_START_DIR)\..\..</MATLAB_count_and_invert_booleans_INCDIR2>
+		<MATLAB_count_and_invert_booleans_INCDIR3>$(MATLAB_count_and_invert_booleans_MATLAB_ROOT)\extern\include</MATLAB_count_and_invert_booleans_INCDIR3>
+		<MATLAB_count_and_invert_booleans_Definitions>MODEL=count_and_invert_booleans;BOOLEAN_T=bool;</MATLAB_count_and_invert_booleans_Definitions>
+		<MATLAB_count_and_invert_booleans_IncludeDir>$(MATLAB_count_and_invert_booleans_INCDIR1);$(MATLAB_count_and_invert_booleans_INCDIR2);$(MATLAB_count_and_invert_booleans_INCDIR3);</MATLAB_count_and_invert_booleans_IncludeDir>
+	</PropertyGroup>
+</Project>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{4492a617-ea37-4d18-b628-c1d4cfa4f4ac}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR CONSTANT
+	Dimension1_Bools	: DINT	:= 3;
+	Dimension2_Bools	: DINT	:= 4;
+	Dimension1_Floats	: DINT	:= 6;
+	Dimension2_Floats	: DINT	:= 2;
+END_VAR
+VAR
+	fbCountBools			: FB_count_and_invert_booleans := ();
+	Count					: LREAL;
+	ArrayBools		AT %I*	: ARRAY[1..Dimension1_Bools, 1..Dimension2_Bools] OF BOOL	:= [7(TRUE)];
+	InverseArray	AT %Q*	: ARRAY[1..Dimension1_Floats, 1..Dimension2_Floats] OF LREAL;
+	o1						: DINT;
+	o2						: DINT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Setting the input boolArray
+fbCountBools.put_boolArray(data := ADR(ArrayBools), size1 := Dimension1_Bools, size2 := Dimension2_Bools);
+//setting the input inverseArray
+fbCountBools.put_inverseArray(data := ADR(InverseArray), size1 := Dimension1_Floats, size2 := Dimension2_Floats);
+//execute the function
+fbCountBools(fcount => Count);
+o1	:= Dimension1_Floats;
+o2	:= Dimension2_Floats;
+//Getting the output inverseArray
+fbCountBools.get_inverseArray_(data := ADR(InverseArray), size1 := o1, size2 := o2);
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="228" Count="9" />
+      <LineId Id="44" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

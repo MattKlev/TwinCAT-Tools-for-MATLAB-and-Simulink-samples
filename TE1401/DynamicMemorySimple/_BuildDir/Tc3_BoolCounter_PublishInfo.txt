@@ -1,0 +1,8 @@
+LibVendor=TE140x Module Vendor 
+LibName=Tc3_BoolCounter 
+LibVersion=0.0.0.9 
+Date=2024-03-04 
+Time=092436 
+PublishArchiveFile= 
+PublishIntDir=C:\Users\MattK\Documents\MATLAB\TE14xxSamples\DynamicMemorySimple\_BuildDir\_products\TcPublish\TE140x Module Vendor\Tc3_BoolCounter\0.0.0.9 
+PublishDstDir=C:\TwinCAT\3.1\Repository\TE140x Module Vendor\Tc3_BoolCounter\0.0.0.9 

@@ -1,0 +1,177 @@
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Filter Include="TwinCAT">
+			<UniqueIdentifier>{1154124E-64F4-160B-3346-4C1525C84374}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TwinCAT\ClassFactory">
+			<UniqueIdentifier>{7CB0B96B-0F8B-F95D-B96E-11DAE7169B0D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TwinCAT\RT">
+			<UniqueIdentifier>{7C80D043-6254-38DC-A926-1B3CF78B5ACE}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TwinCAT\OS">
+			<UniqueIdentifier>{9303269D-2E8D-FA4D-D6D4-CB54C8AE0244}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TwinCAT\UM">
+			<UniqueIdentifier>{63C4ECC2-7107-874F-B36D-FE6AC123323D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TwinCAT\Classes">
+			<UniqueIdentifier>{AB582E37-340B-AB0C-EC66-BA099037B407}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TwinCAT\Classes\count_and_invert_booleans">
+			<UniqueIdentifier>{0F223C42-766B-AD21-5163-B3AA2196FE91}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Resource Files">
+			<UniqueIdentifier>{3CB8E5BD-6715-3C6C-F1A6-D86938FDEF21}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="MATLAB">
+			<UniqueIdentifier>{35AEABB7-DC16-2065-7E55-0CD037C0D94C}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="MATLAB\count_and_invert_booleans">
+			<UniqueIdentifier>{5804BBAF-515D-5215-F30F-B55FB11B8A8B}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="MATLAB\count_and_invert_booleans\Sources">
+			<UniqueIdentifier>{A762ED9F-8732-6DFC-BD23-33C02B9C8E49}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="MATLAB\count_and_invert_booleans\Includes">
+			<UniqueIdentifier>{FCE88892-BD7A-2690-5698-19AE9057EC6E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="xml">
+			<UniqueIdentifier>{873C2EBB-2B1B-4163-DB12-6C0F531446AD}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="TMx">
+			<UniqueIdentifier>{0E821A65-0912-4444-6390-B17BEF9EAE73}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="TcPch.h">
+			<Filter>TwinCAT</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterServices.h">
+			<Filter>TwinCAT</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterDuts.h">
+			<Filter>TwinCAT</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterInterfaces.h">
+			<Filter>TwinCAT</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterClassFactory.h">
+			<Filter>TwinCAT\ClassFactory</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterDrv.h">
+			<Filter>TwinCAT\RT</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterCtrl.h">
+			<Filter>TwinCAT\UM</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterW32.h">
+			<Filter>TwinCAT\UM</Filter>
+		</ClInclude>
+		<ClInclude Include="Tc3_BoolCounterW32Resource.h">
+			<Filter>TwinCAT\UM</Filter>
+		</ClInclude>
+		<ClInclude Include="TcComcount_and_invert_booleans.h">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClInclude>
+		<ClInclude Include="Fbcount_and_invert_booleans.h">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClInclude>
+		<ClInclude Include="count_and_invert_booleansInternal.h">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClInclude>
+		<ClInclude Include="FbTcComcount_and_invert_booleans.h">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\coder_array.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\coder_bounded_array.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\rtwtypes.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_types.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_data.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_initialize.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_terminate.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans.h">
+			<Filter>MATLAB\count_and_invert_booleans\Includes</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="TcPch.cpp">
+			<Filter>TwinCAT</Filter>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterClassFactory.cpp">
+			<Filter>TwinCAT\ClassFactory</Filter>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterDrv.cpp">
+			<Filter>TwinCAT\RT</Filter>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterModulesMain.cpp">
+			<Filter>TwinCAT\OS</Filter>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterCtrl.cpp">
+			<Filter>TwinCAT\UM</Filter>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterW32.cpp">
+			<Filter>TwinCAT\UM</Filter>
+		</ClCompile>
+		<ClCompile Include="TcComcount_and_invert_booleans.cpp">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClCompile>
+		<ClCompile Include="Fbcount_and_invert_booleans.cpp">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClCompile>
+		<ClCompile Include="FbTcComcount_and_invert_booleans.cpp">
+			<Filter>TwinCAT\Classes\count_and_invert_booleans</Filter>
+		</ClCompile>
+		<ClCompile Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_initialize.cpp">
+			<Filter>MATLAB\count_and_invert_booleans\Sources</Filter>
+		</ClCompile>
+		<ClCompile Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_terminate.cpp">
+			<Filter>MATLAB\count_and_invert_booleans\Sources</Filter>
+		</ClCompile>
+		<ClCompile Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans.cpp">
+			<Filter>MATLAB\count_and_invert_booleans\Sources</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="Tc3_BoolCounterW32.rc">
+			<Filter>TwinCAT\UM</Filter>
+		</ResourceCompile>
+		<ResourceCompile Include="Tc3_BoolCounter.rc">
+			<Filter>Resource Files</Filter>
+		</ResourceCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Tc3_BoolCounterGlobals.props">
+			<Filter>Tc3_BoolCounter.vcxproj</Filter>
+		</None>
+		<None Include="Tc3_BoolCounterArtifacts.props">
+			<Filter>Tc3_BoolCounter.vcxproj</Filter>
+		</None>
+		<None Include="Tc3_BoolCounterW32.def">
+			<Filter>TwinCAT\UM</Filter>
+		</None>
+		<None Include="Tc3_BoolCounter.libcat.xml">
+			<Filter>xml</Filter>
+		</None>
+		<None Include="Tc3_BoolCounter.tmc">
+			<Filter>TMx</Filter>
+		</None>
+		<None Include="Tc3_BoolCounter.tml">
+			<Filter>TMx</Filter>
+		</None>
+	</ItemGroup>
+</Project>

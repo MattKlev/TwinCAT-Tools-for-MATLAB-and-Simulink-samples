@@ -1,0 +1,189 @@
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Condition="Exists('$(TWINCATSDK)\Sdk.props')" Project="$(TWINCATSDK)\Sdk.props"/>
+	<Import Condition="Exists('$(TWINCATSDK)\MsBuild\TwinCAT Common')" Project="$(TWINCATSDK)\MsBuild\TwinCAT Common\*.targets"/>
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|TwinCAT RT (x86)">
+			<Configuration>Debug</Configuration>
+			<Platform>TwinCAT RT (x86)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|TwinCAT RT (x86)">
+			<Configuration>Release</Configuration>
+			<Platform>TwinCAT RT (x86)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Debug|TwinCAT RT (x64)">
+			<Configuration>Debug</Configuration>
+			<Platform>TwinCAT RT (x64)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|TwinCAT RT (x64)">
+			<Configuration>Release</Configuration>
+			<Platform>TwinCAT RT (x64)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Debug|TwinCAT OS (x64)">
+			<Configuration>Debug</Configuration>
+			<Platform>TwinCAT OS (x64)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|TwinCAT OS (x64)">
+			<Configuration>Release</Configuration>
+			<Platform>TwinCAT OS (x64)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Debug|TwinCAT UM (x86)">
+			<Configuration>Debug</Configuration>
+			<Platform>TwinCAT UM (x86)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|TwinCAT UM (x86)">
+			<Configuration>Release</Configuration>
+			<Platform>TwinCAT UM (x86)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Debug|TwinCAT UM (x64)">
+			<Configuration>Debug</Configuration>
+			<Platform>TwinCAT UM (x64)</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|TwinCAT UM (x64)">
+			<Configuration>Release</Configuration>
+			<Platform>TwinCAT UM (x64)</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<RootNamespace>Tc3_BoolCounter</RootNamespace>
+		<AutomaticRetargetPlatformVersion>true</AutomaticRetargetPlatformVersion>
+		<TcSignTwinCatCertName>Beckhoff_N.A</TcSignTwinCatCertName>
+		<PreferredToolArchitecture>x64</PreferredToolArchitecture>
+		<_IsNativeEnvironment>true</_IsNativeEnvironment>
+		<ProjectGuid>{32AEEAE7-A133-41CD-B2A8-65EB67BD802E}</ProjectGuid>
+	</PropertyGroup>
+	<Import Project="Tc3_BoolCounterGlobals.props"/>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+	<PropertyGroup Label="Configuration">
+		<PlatformToolset>v142</PlatformToolset>
+		<TcGeneralUseTmx>true</TcGeneralUseTmx>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+	<ImportGroup Label="ExtensionSettings">
+		<Import Project="$(ModuleGeneratorSdk)\MsBuild\Targets\*.props"/>
+		<Import Project="$(TE140xSdk)\MsBuild\Targets\*.props" Condition="'$(TE140xSdk)'!='$(ModuleGeneratorSdk)'"/>
+		<Import Project="$(TWINCATSDK)\Build\MsBuild\TwinCAT Common\Extensions\*.props" Condition="Exists('$(TWINCATSDK)\Build\MsBuild\TwinCAT Common\Extensions')"/>
+	</ImportGroup>
+	<ImportGroup Label="PropertySheets">
+		<Import Project="$(ModuleGeneratorSdk)\MsBuild\Props\*.props"/>
+		<Import Project="$(TE140xSdk)\MsBuild\Props\*.props" Condition="'$(TE140xSdk)'!='$(ModuleGeneratorSdk)'"/>
+		<Import Project="Tc3_BoolCounterArtifacts.props"/>
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros"/>
+	<PropertyGroup>
+		<TcPostPublishCommand>$(TcPostPublishCommand)
+
+echo LibVendor=[LibVendor] &gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo LibName=[LibName] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo LibVersion=[LibVersion] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo Date=[Date] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo Time=[Time] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo PublishArchiveFile=[PublishArchiveFile] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo PublishIntDir=[PublishIntDir] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+echo PublishDstDir=[PublishDstDir] &gt;&gt; "$(ProjectDir)\Tc3_BoolCounter_PublishInfo.txt"
+</TcPostPublishCommand>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<AdditionalIncludeDirectories Condition="$(Platform.StartsWith('TwinCAT RT'))">$(ProjectDir)\TwinCAT RT\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories Condition="$(Platform.StartsWith('TwinCAT OS'))">$(ProjectDir)\TwinCAT OS\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories Condition="$(Platform.StartsWith('TwinCAT UM'))">$(ProjectDir)\TwinCAT UM\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories Condition="$(Platform.StartsWith('TwinCAT CE'))">$(ProjectDir)\TwinCAT CE\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>TCMATH_BLOCK_STANDARDLIB=0;TC_BUILD_MIN=4024;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<PreprocessorDefinitions>TcDrvVersioned;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>TcMgFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>TcMgFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>TcMgFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>TcMgFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalDependencies>TcMgFramework.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClInclude Include="TcPch.h"/>
+		<ClInclude Include="Tc3_BoolCounterServices.h"/>
+		<ClInclude Include="Tc3_BoolCounterDuts.h"/>
+		<ClInclude Include="Tc3_BoolCounterInterfaces.h"/>
+		<ClInclude Include="Tc3_BoolCounterClassFactory.h"/>
+		<ClInclude Include="Tc3_BoolCounterDrv.h"/>
+		<ClInclude Include="Tc3_BoolCounterCtrl.h"/>
+		<ClInclude Include="Tc3_BoolCounterW32.h"/>
+		<ClInclude Include="Tc3_BoolCounterW32Resource.h"/>
+		<ClInclude Include="TcComcount_and_invert_booleans.h"/>
+		<ClInclude Include="Fbcount_and_invert_booleans.h"/>
+		<ClInclude Include="count_and_invert_booleansInternal.h"/>
+		<ClInclude Include="FbTcComcount_and_invert_booleans.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\coder_array.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\coder_bounded_array.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\rtwtypes.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_types.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_data.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_initialize.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_terminate.h"/>
+		<ClInclude Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans.h"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="TcPch.cpp">
+			<PrecompiledHeader>Create</PrecompiledHeader>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterClassFactory.cpp"/>
+		<ClCompile Include="Tc3_BoolCounterDrv.cpp">
+			<ExcludedFromBuild Condition="!$(Platform.StartsWith('TwinCAT RT'))">true</ExcludedFromBuild>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterModulesMain.cpp">
+			<ExcludedFromBuild Condition="!$(Platform.StartsWith('TwinCAT OS'))">true</ExcludedFromBuild>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterCtrl.cpp">
+			<ExcludedFromBuild Condition="!$(Platform.StartsWith('TwinCAT UM'))">true</ExcludedFromBuild>
+		</ClCompile>
+		<ClCompile Include="Tc3_BoolCounterW32.cpp">
+			<ExcludedFromBuild Condition="!$(Platform.StartsWith('TwinCAT UM'))">true</ExcludedFromBuild>
+		</ClCompile>
+		<ClCompile Include="TcComcount_and_invert_booleans.cpp">
+			<PreprocessorDefinitions>$(MATLAB_count_and_invert_booleans_Definitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<AdditionalIncludeDirectories>$(MATLAB_count_and_invert_booleans_IncludeDir)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+		</ClCompile>
+		<ClCompile Include="Fbcount_and_invert_booleans.cpp">
+			<PreprocessorDefinitions>$(MATLAB_count_and_invert_booleans_Definitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<AdditionalIncludeDirectories>$(MATLAB_count_and_invert_booleans_IncludeDir)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+		</ClCompile>
+		<ClCompile Include="FbTcComcount_and_invert_booleans.cpp"/>
+		<ClCompile Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_initialize.cpp">
+			<PreprocessorDefinitions>$(MATLAB_count_and_invert_booleans_Definitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<AdditionalIncludeDirectories>$(MATLAB_count_and_invert_booleans_IncludeDir)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+		</ClCompile>
+		<ClCompile Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans_terminate.cpp">
+			<PreprocessorDefinitions>$(MATLAB_count_and_invert_booleans_Definitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<AdditionalIncludeDirectories>$(MATLAB_count_and_invert_booleans_IncludeDir)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+		</ClCompile>
+		<ClCompile Include="$(MATLAB_count_and_invert_booleans_START_DIR)\count_and_invert_booleans.cpp">
+			<PreprocessorDefinitions>$(MATLAB_count_and_invert_booleans_Definitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<AdditionalIncludeDirectories>$(MATLAB_count_and_invert_booleans_IncludeDir)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PrecompiledHeader>NotUsing</PrecompiledHeader>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="Tc3_BoolCounterW32.rc">
+			<ExcludedFromBuild Condition="!$(Platform.StartsWith('TwinCAT UM'))">true</ExcludedFromBuild>
+		</ResourceCompile>
+		<ResourceCompile Include="Tc3_BoolCounter.rc"/>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Tc3_BoolCounterGlobals.props"/>
+		<None Include="Tc3_BoolCounterArtifacts.props"/>
+		<None Include="Tc3_BoolCounterW32.def">
+			<ExcludedFromBuild Condition="!$(Platform.StartsWith('TwinCAT UM'))">true</ExcludedFromBuild>
+		</None>
+		<None Include="Tc3_BoolCounter.libcat.xml"/>
+		<None Include="Tc3_BoolCounter.tmc"/>
+		<None Include="Tc3_BoolCounter.tml"/>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+	<ImportGroup Label="ExtensionTargets">
+		<Import Project="$(ModuleGeneratorSdk)\MsBuild\Targets\*.targets"/>
+		<Import Project="$(TE140xSdk)\MsBuild\Targets\*.targets" Condition="'$(TE140xSdk)'!='$(ModuleGeneratorSdk)'"/>
+		<Import Project="$(TWINCATSDK)\Build\MsBuild\TwinCAT Common\Extensions\*.targets" Condition="Exists('$(TWINCATSDK)\Build\MsBuild\TwinCAT Common\Extensions')"/>
+	</ImportGroup>
+</Project>
